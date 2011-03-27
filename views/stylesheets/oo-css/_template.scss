@@ -1,0 +1,10 @@
+@mixin oo-template {
+  .page{margin:0 auto;width:960px;} /* wraps other template elems to set width */
+  .body,.main{*zoom:1;}
+  .body:after,.main:after{@include oo-clearfix;}
+  .main{display:table-cell;*display:block;width:auto;}
+  .liquid{width:auto;margin:0;}
+  .widescreen{width:1080px;}
+   aside, .left{float:left;}
+  .right{float:right;}
+}

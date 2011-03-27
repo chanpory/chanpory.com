@@ -1,0 +1,10 @@
+@mixin oo-clearfix {
+  clear:both;
+  display:block;
+  visibility:hidden;
+  overflow:hidden;
+  height:0 !important;
+  line-height:0;
+  font-size:xx-large;
+  content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}

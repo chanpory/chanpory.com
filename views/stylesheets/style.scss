@@ -1,0 +1,449 @@
+// HTML5 Boilerplate
+// 
+// Credit is left where credit is due.
+// Much inspiration was taken from these projects:
+// - yui.yahooapis.com/2.8.1/build/base/base.css
+// - camendesign.com/design/
+// - praegnanz.de/weblog/htmlcssjs-kickstart
+
+// HTML 5 Boilerplate SASS mix-ins created by sporkd
+// - github.com/sporkd/compass-html5-boilerplate
+
+// ===============================================================
+// Setup basic styles
+// ===============================================================
+
+// == Imported mixins ==
+@import "html5-boilerplate/all";
+@import "oo-css/all";
+
+// == Colors ==
+$font-color: #333; 
+$link-color: #c22e2e;
+$link-hover-color: #036;
+$link-active-color: #607890;
+$link-visited-color: #607890;
+$selected-font-color: #000;
+$selected-background-color: #e7fac3;
+$divider-color: #aaa;
+$black: #333333;
+$heading-color: rgba(0,0,0,.90);
+
+
+body { color: $font-color;}
+
+a {
+  color: $link-color;
+}
+
+strong {
+  font-weight: bold !important;
+}
+
+// == Spacing ==
+$default-margin: 20px; 
+$list-left-margin: 20px;
+
+// == Default Styles ==
+@include html5-boilerplate-reset;
+@include html5-boilerplate-base;
+/* @include html5-boilerplate-fonts; */
+@include oo-grid;
+
+
+// ===============================================================
+// Headings
+// ===============================================================
+
+// .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings
+h1, .h1{font-size:275%; font-weight:normal; font-style: normal; color:$heading-color;}
+h2, .h2{font-size:167%; font-weight:normal; font-style: normal; color:$heading-color;}
+h3, .h3{font-size:146.5%; font-weight:normal; font-style: normal; color:$heading-color;}
+h4, .h4{font-size:123.1%; font-weight:normal; font-style: normal; color: $heading-color;}
+h5, .h5{font-size:108%; font-weight:bold; font-style: normal; color:$heading-color;}
+h6, .h6{font-size:108%; font-weight:normal; font-style: italic; color:$heading-color;}
+
+
+h1, h2, h3, h4, h5, h6 {line-height: 1.3; font-weight: 900;}
+
+
+// ===============================================================
+// Spacing
+// ===============================================================
+h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote, p, pre, .media {margin: $default-margin/2 $default-margin;}
+
+p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 { margin-top: $default-margin * 2; }
+h1, h2, h3, h4, h5, h6,img{padding-bottom:0px;}
+pre {padding: 15px;}
+table h1,table h2,table h3, table h4, table h5, table h6, table p, table ul, table ol, table dl {padding:0;}
+ul, ol {margin-left: $list-left-margin;}
+
+// ===============================================================
+// Sections
+// ===============================================================
+
+.page           {margin:0 auto;width:960px;} /* wraps other template elems to set width */
+.widescreen     {width:1080px;}
+.liquid         {width:auto; margin:0;}
+
+.body,
+.main           {*zoom:1;}
+
+ header, 
+.main           {overflow:hidden;}
+
+header:after,
+.body:after, 
+.main:after, footer:after {@include oo-clearfix;}
+
+aside, 
+.left           {float: left;}
+
+.right          {float: right;}
+footer          {overflow:hidden; display: block; clear:both;}
+
+
+// ===============================================================
+// Global Page Structure
+// ===============================================================
+
+body {
+  font: 13px/20px "rooney-web-1","rooney-web-2",serif !important;  
+/*   background-color: #f4e1c3; */
+  background: url('images/paper.png');
+  text-shadow: 0 1px #faf3ed;
+}
+
+h1, h2, h3				 { font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-weight: 800; }
+
+
+
+.page.blog {
+  padding: 0 20px 0 20px;
+
+  > header {
+/*     float: left; */
+    margin-bottom: 20px;
+    
+    h1 {
+      margin: 40px auto;
+      width: 300px;
+      text-align:center;
+    }
+    
+    nav {
+      border-top: 5px solid $black;
+      border-bottom: 1px solid $divider-color;
+      margin: $default-margin/2 $default-margin 0 $default-margin;
+      @include clearfix;
+      padding: 6px 0 4px 0;
+      height: 24px;
+    }
+    
+    ul {
+      margin: 0;
+    }
+    
+    .bar {
+      margin: 0;
+    }
+        
+    .tagline {
+      float: left;
+      margin: 0px;
+      font-style: italic;
+    }
+  }
+  
+  > .main {
+    border-right: 1px solid $divider-color;
+  }
+  
+  > aside {
+    width: $size1of3;
+    float: right;
+    margin-left: -1px;
+    border-left: 1px solid $divider-color;
+  }
+
+}
+
+.page.front {
+  .line {
+    float: left;
+    margin: $default-margin $default-margin 0 $default-margin;
+  }
+}
+
+
+// ===============================================================
+// Debug
+// ===============================================================
+
+/*
+header          {background-color: rgba(50,100,200,.75);}
+.main           {background-color: rgba(0,150,50,.75);}
+aside           {background-color: rgba(250,200,10,.75);}
+footer          {background-color: rgba(255,100,200,.75);}
+*/
+
+/* .page           {background:url('images/grid.png');} */
+
+// ===============================================================
+// Objects
+// ===============================================================
+
+
+// == Masthead ==
+.masthead {
+/*
+  .logo {
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+*/
+  
+  .tagline {
+    
+
+  }
+  
+  .bar {
+    float: right;
+    @include pie-clearfix;
+  }
+}
+
+
+.subscribe_rss {
+  margin: 0;
+  width: 100px;
+  text-align: center;
+}
+
+
+// == Logo ==
+.logo {
+
+  
+}
+
+.logo.lifeclever {
+/*
+  background: ;  
+  width: ;
+  height: ;
+*/
+}
+
+// == Navigation:Bar ==
+.bar {
+  &:after {
+    @include oo-clearfix;
+  }
+  
+  ul:after {
+    @include oo-clearfix;
+  }
+
+  li {
+    float: left;
+    
+    &:before{
+      content: "\b7"; 
+      margin: 0 .5em; 
+    }
+    
+    &:first-child:before{
+      display: none;
+    }
+  }
+}
+
+// == Navigation:Menu ==
+.menu {
+  li {
+    margin-bottom: 1em;
+  }
+  
+  a {
+    display: block;
+  }
+}
+
+// == Post:Standard ==
+
+.post.feature {
+  h1 { 
+    border:none;
+  }
+}
+
+.line {
+
+  float: left;
+  border-top: 1px solid $divider-color;
+
+  .post+.post {
+    border-right: none;
+  }
+  
+  @include pie-clearfix;
+}
+
+.post {
+  float: left;
+
+  header {
+
+    
+    img { 
+      margin-left: 20px;
+    }
+    
+    h1 { 
+      margin-right: 20px;
+      padding-top: 10px;
+    }
+    
+    p { 
+      margin-bottom: 0;
+      font-style: italic;
+    }
+  
+  }
+  
+  p { margin-right: 36px;}
+  
+  .meta {
+    margin-top: 0;
+  }
+  
+  img
+  
+  footer {  
+    .date {
+    
+    }
+  }
+}
+
+.post.front{
+  h1, p, .meta {margin-left: 0; margin-right: 20px;}
+  border-right: 1px solid $divider-color;
+  margin-top: 20px;
+  
+  h1 {
+    font-size: 200%;
+    padding-top: 0px;
+    margin: 0 $default-margin 0 0;
+  }
+}
+
+.post.front + .post.front{
+  h1, p, .meta {margin-right: 0; margin-left: 20px;}
+  border-left: 1px solid $divider-color;
+  margin-left: -1px;
+  width: 339px;
+}
+
+
+// == Meta ==
+
+.meta {
+  color: #aaa;
+}
+
+.share {
+
+}
+
+// == Post:Feature ==
+
+
+// == Form:Sign-In ==
+.sign-in {
+}
+
+// == Form:Registration ==
+.registration {
+
+}
+
+// == Module ==
+
+/* mod */
+.mod {
+  h3{
+    border-top: 5px solid $black;
+    border-bottom: 1px solid $divider-color;
+    padding: 6px 0;
+    margin: 0 20px;
+    font-weight: bold;
+  }
+  
+  margin-bottom: 25px;
+  padding: 0px;
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    display: block;
+    margin: 0 20px;
+    padding: 10px;
+    background: rgba(0,0,0,.1);
+  }
+  
+
+
+}
+
+.mod.about p {
+  padding-top: 8px;
+  padding-right: 30px;
+  height: 90px;
+
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid $divider-color;
+}
+
+.mod.popular {
+
+  ul {
+    margin-top: 0;
+  }
+  li {
+    border-bottom: 1px solid $divider-color;
+    padding: 6px 0;
+  }
+  
+  span {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    text-shadow: none;
+    margin-right: 10px;
+    font-family: "proxima-nova-1","proxima-nova-2",sans-serif; font-weight: normal; 
+  }
+
+}
+
+
+// ==  Media ==
+.media {
+
+}
+
+ 
+// ===============================================================
+// Skins
+// ===============================================================

@@ -1,0 +1,51 @@
+//grid units:
+
+  $size1of2:  50%;
+  $size1of3:  33.33333%;
+  $size2of3:  66.66666%;
+  $size1of4:  25%;
+  $size3of4:  75%;
+  $size1of5:  20%;
+  $size2of5:  40%;
+  $size3of5:  60%;
+  $size4of5:  80%;
+  $size1of6:  16.66666%;
+  $size5of6:  83.33333%;
+  $size1of7:  14.28571%;
+  $size1of8:  12.5%;
+  $size3of8:  37.5%;
+  $size5of8:  62.5%;
+  $size7of8:  87.5%;
+  $size1of12: 8.33333%;
+  $size5of12: 41.66666%;
+  $size7of12: 58.33333%;
+  $size11of12:  91.66666%;
+
+
+@mixin oo-grid {
+  .line:after,.lastUnit:after{@include oo-clearfix;}
+  .line{*zoom:1;}
+  .unit{float:left;}
+  .size1of1{float:none;}
+  .size1of2{width:$size1of2;}
+  .size1of3{width:$size1of3;}
+  .size2of3{width:$size2of3;}
+  .size1of4{width:$size1of4;}
+  .size3of4{width:$size3of4;}
+  .size1of5{width:$size1of5;}
+  .size2of5{width:$size2of5;}
+  .size3of5{width:$size3of5;}
+  .size4of5{width:$size4of5;}
+  .size1of6{width:$size1of6;}
+  .size5of6{width:$size5of6;}
+  .size1of7{width:$size1of7;}
+  .size1of8{width:$size1of8;}
+  .size3of8{width:$size3of8;}
+  .size5of8{width:$size5of8;}
+  .size7of8{width:$size7of8;}
+  .size1of12{width:$size1of12;}
+  .size5of12{width:$size5of12;}
+  .size7of12{width:$size7of12;}
+  .size11of12{width:$size11of12;}
+  .lastUnit{display:table-cell;float:none;width:auto;*display:block;*zoom:1;}
+}
